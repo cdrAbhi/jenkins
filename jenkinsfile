@@ -1,0 +1,22 @@
+pipeline {
+    agent none
+
+    stages {
+        stage('Hello-pipe-line_as-code') {
+            agent {
+                label 'window'
+            }
+            steps {
+                bat 'echo Hello World'
+                bat 'date /T'
+                bat 'cd'
+                bat '''
+                   echo now we are good
+                   dir
+                   date /T
+                   cd
+                 '''
+            }
+        }
+    }
+}
